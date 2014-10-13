@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .animal{
+            color: #999;
+        }
+        .person{
+            color:#ff571a;
+        }
+        .repeat{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div id="repeat" class="{{repeat.className}}">
+    <div z-repeat="animals" class="{{className}} animals">
+        <span class="type">{{type}}</span>
+        <span class="name" z-if="name">{{name}}</span>
+    </div>
+</div>
+<script src='../build/TplRender.js'></script>
+<script>
+    var ele = document.getElementById('repeat')
+    var data={
+        repeat:{
+            className:'repeat'
+        },
+        animals:[
+            {type:'cat',name:'tom',className:'animal'},
+            {type:'dog',name:'qiqi',className:'animal'},
+            {type:'pig',name:'god',className:'animal'},
+            {type:'pig',className:'animal'},
+            {type:'pig',className:'animal'},
+            {type:'pig',className:'animal'}
+        ]
+    }
+    var tpl = TplRender(ele,data);
+    tpl.animals.$push({type:'code monkey',name:'程序猿~',className:'animal'})
+</script>
+</body>
+</html>
