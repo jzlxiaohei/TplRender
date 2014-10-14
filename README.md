@@ -1,7 +1,7 @@
 #TplRender
 
 ---
-simple template render directly based on dom
+simple dom-based template render lib
 
 ---
 #Demo
